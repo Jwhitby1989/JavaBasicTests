@@ -1,45 +1,49 @@
-function add (a, b) {
-  // your code here
+function add(a, b) {
+  return a + b;
 }
 
-function subtract (a, b) {
-  // your code here
+function subtract(a, b) {
+  return a - b;
 }
 
-function multiply (a, b) {
-  // your code here
+function multiply(a, b) {
+  return a * b;
 }
 
-function divide (a, b) {
-  // your code here
+function divide(a, b) {
+  return a / b;
 }
 
-function power (a, b) {
-  // your code here
+function power(a, b) {
+  const sum = b * a;
+  const sum2 = sum;
+  return sum2;
 }
 
-function round (a) {
-  // your code here
+function round(a) {
+  return Math.round(a);
 }
 
-function roundUp (a) {
-  // your code here
+function roundUp(a) {
+  return Math.ceil(a);
 }
 
-function roundDown (a) {
-  // your code here
+function roundDown(a) {
+  return Math.floor(a);
 }
 
-function absolute (a) {
-  // your code here
+function absolute(a) {
+  return Math.abs(a);
 }
 
-function quotient (a, b) {
-  // your code here
+function quotient(a, b) {
+  const sums = (a / b) % 1;
+  const sums2 = Math.trunc(a, b);
+  console.log(sums, sums2);
 }
 
-function remainder (a, b) {
-  // your code here
+function remainder(a, b) {
+  return a % b;
 }
 
 module.exports = {
@@ -54,4 +58,4 @@ module.exports = {
   absolute,
   quotient,
   remainder
-}
+};

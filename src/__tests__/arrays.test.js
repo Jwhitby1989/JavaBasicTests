@@ -32,14 +32,14 @@ describe('getNthElement', () => {
 });
 
 describe('arrayToCSVString', () => {
-  xit('returns the array elements as a comma-seperated string', () => {
+  it('returns the array elements as a comma-seperated string', () => {
     expect(arrayToCSVString(['a', 'b', 'c', 'd'])).toEqual('a,b,c,d');
     expect(arrayToCSVString([1, 2, 3, 4, 5])).toEqual('1,2,3,4,5');
   });
 });
 
 describe('csvStringToArray', () => {
-  xit('converts the csv string as an array', () => {
+  it('converts the csv string as an array', () => {
     expect(csvStringToArray('a,b,c,d')).toEqual(['a', 'b', 'c', 'd']);
     expect(csvStringToArray('1,2,3,4,5')).toEqual(['1', '2', '3', '4', '5']);
   });
@@ -76,7 +76,7 @@ describe('removeNthElement', () => {
     const array = ['ant', 'bison', 'cockerel', 'duck', 'elephant'];
     removeNthElement(2, array);
     expect(array).toEqual(['ant', 'bison', 'duck', 'elephant']);
-    
+
     const arrayTwo = ['thing 1', 'thing 2', 'thing 3', 'thing 4', 'thing 5'];
     removeNthElement(0, arrayTwo);
     expect(arrayTwo).toEqual(['thing 2', 'thing 3', 'thing 4', 'thing 5']);
@@ -170,13 +170,10 @@ describe('elementsStartingWithAVowel', () => {
         'zupple'
       ])
     ).toEqual(['apple', 'epple', 'ipple', 'opple', 'upple']);
-    expect(
-      elementsStartingWithAVowel([
-        'aaaa',
-        'bbbb',
-        'eeee',
-      ])
-    ).toEqual(['aaaa', 'eeee']);
+    expect(elementsStartingWithAVowel(['aaaa', 'bbbb', 'eeee'])).toEqual([
+      'aaaa',
+      'eeee'
+    ]);
   });
 
   xit('is case insensitive', () => {
@@ -210,13 +207,10 @@ describe('elementsStartingWithAVowel', () => {
         'Zupple'
       ])
     ).toEqual(['Apple', 'Epple', 'Ipple', 'Opple', 'Upple']);
-     expect(
-      elementsStartingWithAVowel([
-        'Aaaa',
-        'Bbbb',
-        'Eeee',
-      ])
-    ).toEqual(['Aaaa', 'Eeee']);
+    expect(elementsStartingWithAVowel(['Aaaa', 'Bbbb', 'Eeee'])).toEqual([
+      'Aaaa',
+      'Eeee'
+    ]);
   });
 });
 
@@ -243,8 +237,11 @@ describe('sortByLastLetter', () => {
     expect(
       sortByLastLetter(['Lannister', 'Stark', 'Greyjoy', 'Targaryen'])
     ).toEqual(['Stark', 'Targaryen', 'Lannister', 'Greyjoy']);
-    expect(
-      sortByLastLetter(['Mo', 'Romy', 'Miguel', 'Martyna'])
-    ).toEqual(['Martyna', 'Miguel', 'Mo', 'Romy']);
+    expect(sortByLastLetter(['Mo', 'Romy', 'Miguel', 'Martyna'])).toEqual([
+      'Martyna',
+      'Miguel',
+      'Mo',
+      'Romy'
+    ]);
   });
 });

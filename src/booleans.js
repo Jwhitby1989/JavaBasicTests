@@ -11,41 +11,55 @@ function both(a, b) {
 }
 
 function either(a, b) {
-  if (a === true) {
-    return true;
-  }
+  return a || b;
 }
 
 function none(a, b) {
-  // your code here
+  return !a && !b;
 }
 
 function one(a, b) {
-  // your code here
+  if ((a && !b) || (!a && b)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function truthiness(a) {
-  // your code here
+  return Boolean(a);
 }
 
 function isEqual(a, b) {
-  // your code here
+  if (a === b) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function isGreaterThan(a, b) {
-  // your code here
+  if (a > b) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function isLessThanOrEqualTo(a, b) {
-  // your code here
+  if (a <= b) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function isOdd(a) {
-  // your code here
+  return a % 2 === 1;
 }
 
 function isEven(a) {
-  // your code here
+  return a % 2 === 0;
 }
 
 function isSquare(a) {
@@ -53,15 +67,20 @@ function isSquare(a) {
 }
 
 function startsWith(char, string) {
-  // your code here
+  return string[0] === char;
+  /* if (string[0] === char) {
+    return true;
+  } else {
+    return false;
+  } */
 }
 
 function containsVowels(string) {
-  // your code here
+  // your code here - regex
 }
 
 function isLowerCase(string) {
-  // your code here
+  // your code here - regex
 }
 
 module.exports = {

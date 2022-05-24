@@ -1,10 +1,10 @@
 const getNthElement = (index, array) => {
-  if (index > array.length) {
-    return array[0];
+  if (index > array.length - 1) {
+    return array[index - array.length];
   } else {
     return array[index];
   }
-};
+}; // try this again
 
 const arrayToCSVString = array => {
   return array.join(',');
@@ -15,62 +15,83 @@ const csvStringToArray = string => {
 };
 
 const addToArray = (element, array) => {
-  // return array.push(element);
+  array.push(element);
 };
 
 const addToArray2 = (element, array2) => {
-  return array2.map(() => {
-    return array2.push(element);
-  });
+  const newArr = [...array2];
+  newArr.push(element);
+  return newArr;
 };
 
 const removeNthElement = (index, array) => {
-  // console.log(array.splice(index, 0, index));
+  array.splice(index, 1);
+
+  return array;
 };
 
 const numbersToStrings = numbers => {
-  // return numbers.split(',').toString();
+  const newArr = numbers.map(number => {
+    return number.toString();
+  });
+  return newArr;
 };
 
 const uppercaseWordsInArray = strings => {
-  // console.log(strings.toUpperCase());
+  const arr = strings.map(string => {
+    return string.toUpperCase();
+  });
+  return arr;
 };
 
 const reverseWordsInArray = strings => {
-  // console.log(
-  //   strings
-  //     .split(',')
-  //     .reverse(' ')
-  //     .join(',')
-  // );
+  const arry = strings.map(string => {
+    return string
+      .split('')
+      .reverse()
+      .join('');
+  });
+  return arry;
 };
 
 const onlyEven = numbers => {
-  if (numbers % 2) {
-    console.log(numbers);
-  }
+  const array = numbers.filter(number => {
+    return number % 2 === 0;
+  });
+  return array;
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  const newArr = [...array];
+  newArr.splice(index, 1);
+  return newArr;
 };
 
 const elementsStartingWithAVowel = strings => {
   const newArr = [];
-  for (let i = 0; i < strings.length; i++) {
-    if (strings[0] === ['a', 'e', 'i', 'o', 'u']) {
-      newArr.push(strings[i]);
-    }
-    return newArr;
-  }
+  const vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'];
+  strings.forEach(string => {
+    vowels.forEach(vowel => {
+      if (string.charAt(0) === vowel) {
+        newArr.push(string);
+      }
+    });
+  });
+
+  return newArr;
 };
 
 const removeSpaces = string => {
-  // your code here
+  const array = string.map(item => {
+    item.join('');
+  });
+  return array;
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  // let initialVal = 0;
+  // const sum = numbers.reduce(prevVal, currentVal) => prevVal + currentVal, initialVal;
+  // console.log(sum)
 };
 
 const sortByLastLetter = strings => {
